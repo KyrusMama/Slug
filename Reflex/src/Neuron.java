@@ -1,6 +1,9 @@
 import java.util.Scanner;
-
 public class Neuron {
+	
+	public Neurotransmitter NT;
+	
+	
 	
 	public static void main(String[] args) 
 	{
