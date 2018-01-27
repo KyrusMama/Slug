@@ -28,4 +28,8 @@ public class Synapse implements Receiver{
 		
 	}
 	
+	public static void main(String[] args)
+	{
+		
+	}
 }
