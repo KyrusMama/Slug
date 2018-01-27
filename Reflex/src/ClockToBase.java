@@ -1,11 +1,11 @@
 public class ClockToBase {
 	
-	double c;
+	private double c;
 	
-	double base;
+	private double base=0;
 	
-	double amt;
-	long lastTime;
+	private double amt;
+	private long lastTime;
 	
 	ClockToBase(double amt,double c)
 	{
@@ -16,7 +16,7 @@ public class ClockToBase {
 	double getAmt()
 	{
 		long time=System.currentTimeMillis();
-		return amt*Math.pow(Math.E, (-1*Math.abs(time-lastTime)/c));
+		return base + amt*Math.pow(Math.E, (-1*Math.abs(time-lastTime)/c));
 	}
 	
 	public void set(double amt)

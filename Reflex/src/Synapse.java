@@ -18,11 +18,14 @@ public class Synapse implements Receiver{
 	public void receive()
 	{
 		Neurotransmitter NT=from.NT;
-		
-		for(Receptor i:receptors)
+		for(int j=0;j<amount;j++)
 		{
-			i.transmit(NT);
+			for(Receptor i:receptors)
+			{
+				i.transmit(NT);
+			}
 		}
+		
 	}
 	
 }

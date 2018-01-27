@@ -5,14 +5,44 @@ public class Neuron {
 	
 	ArrayList<Receiver> next=new ArrayList<Receiver>();
 	
-	double potential;
-	
-	double base;
+	double base=0;
 	double threshold;
-	
+	//the potential is accessed through clock to base
 	ClockToBase PotentialSet=new ClockToBase(base,1000.0);
 	
 	Clock NTeffector=new Clock(1000,1000);
+	
+	/**
+	 * @return the potential
+	 */
+	public double getPotential() {
+		return PotentialSet.getAmt();
+	}
+
+	/**
+	 * @param potential the potential to set
+	 */
+	public void setPotential(double potential) {
+		PotentialSet.set(potential);
+	}
+	
+	public boolean checkFire()
+	{
+		double pot=getPotential();
+		if(pot>threshold)
+		{
+			setPotential(pot-(threshold-base));
+			fire();
+			checkFire();		//recursive
+			return true;
+		}
+		return false;
+	}
+	
+	private void fire()
+	{
+		
+	}
 	
 	public static void main(String[] args) 
 	{
@@ -30,5 +60,7 @@ public class Neuron {
 		}
 		
 	}
+
+	
 	
 }
