@@ -16,13 +16,10 @@ public class ClockToBase {
 	double getAmt()
 	{
 		long time=System.currentTimeMillis();
-<<<<<<< HEAD
-		return base + amt*Math.pow(Math.E, (-1*Math.abs(time-lastTime)/c));
-=======
+
 		double x = Math.abs(time - lastTime);
 		return base + Calculate.decayEffect(amt,x,c);
 		
->>>>>>> b0298e4820eb2fd11af394af1fa0c23c3d5d3fc9
 	}
 	
 	public void set(double amt)
