@@ -19,8 +19,10 @@ public class Clock {
 		long time=System.currentTimeMillis();
 		double total=0;
 		for(Long i:history)
-		{
-			double y=a*Math.pow(Math.E, (-1*Math.abs(time-i)/c));
+		{   
+			double x= Math.abs(time-i);
+			double y = Calculate.decayEffect(a, x, c);
+			
 			if(y<0.01*a)
 			{
 				//history.remove();
