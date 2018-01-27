@@ -13,7 +13,7 @@ public class Neuron {
 	
 	double a,b;
 
-	Clock NTeffector=new Clock(a,b);
+	Clock NTeffector;
 	
 	Neuron(Neurotransmitter NT,double a, double b)
 	{
@@ -21,18 +21,22 @@ public class Neuron {
 		NTbaseAmount=NT.amount;
 		this.a=a;
 		this.b=b;
+		NTeffector=new Clock(a,b);
 	}
 	
 	Neuron(Neurotransmitter NT)
 	{
 		this.NT=NT;
 		NTbaseAmount=NT.amount;
+		NTeffector=new Clock(100,100);
+
 	}
 	
 	void addReceiver(Receiver tba)
 	{
 		next.add(tba);
 	}
+	
 	/**
 	 * @return the potential
 	 */
@@ -52,7 +56,9 @@ public class Neuron {
 		double pot=getPotential();
 		if(pot>threshold)
 		{
-			setPotential(pot-(threshold-base));
+			setPotential(pot-(threshold));
+			System.out.println("motor fire");
+
 			fire();
 			checkFire();		//recursive
 			return true;
@@ -60,9 +66,12 @@ public class Neuron {
 		return false;
 	}
 	
-	private void fire()
+	public void fire()
 	{
-		NT.amount = NTbaseAmount-NTeffector.effect();
+		double eff;
+		NT.amount = NTbaseAmount-(eff=NTeffector.effect());
+		System.out.println(eff);
+		//System.out.println(NT.amount);
 		for(Receiver i:next)
 			i.receive();
 	}

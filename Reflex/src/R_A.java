@@ -1,6 +1,8 @@
 public class R_A extends IonotropicReceptor{
 
-    double potIncrease = 10;// growth curve
+    R_A(Neuron belong, double amount) {
+		super(belong, amount);
+	}
 
     @Override
     public void transmit(Neurotransmitter nt) {
