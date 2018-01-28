@@ -2,9 +2,12 @@ import java.util.*;
 
 public class Clock {
 	
-	double a;
+	//Uses function Calculate.decayEffect
+	double a;	
 	double c;
 	
+	//a list of all the times that the neuron has fired from CurrentTimeMillis, 
+	//removes irrelevant data
 	LinkedList<Long> history=new LinkedList<Long>();
 	
 	Clock(double a,double c)
@@ -13,6 +16,10 @@ public class Clock {
 		this.c=c;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public double effect()
 	{
 		int tbr=0;
@@ -37,6 +44,17 @@ public class Clock {
 		for(int x=0;x<tbr;x++)
 			history.removeFirst();
 		return total;
+	}
+	
+	public void add(long time)
+	{
+		history.add(time);
+	}
+	
+	public void add()
+	{
+		long time=System.currentTimeMillis();
+		history.add(time);
 	}
 	
 }

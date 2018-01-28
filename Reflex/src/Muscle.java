@@ -1,7 +1,7 @@
 
 public class Muscle implements Receiver{
 
-	Clock timeKeep=new Clock(100,100);
+	Clock timeKeep=new Clock(10,100);
 	@Override
 	public void receive() {
 		// TODO Auto-generated method stub

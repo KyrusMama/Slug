@@ -1,13 +1,20 @@
 
 public class NT_A extends Neurotransmitter{
 
-	
+	/**
+	 * constructs with name "A"
+	 * amount = 0
+	 */
 	NT_A()
 	{
 		name="A";
 		amount=0;
 	}
 	
+	/**
+	 * name="A"
+	 * @param amount stord in neurotransmitter.amt
+	 */
 	NT_A(double amount)
 	{
 		name="A";
