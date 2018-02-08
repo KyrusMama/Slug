@@ -77,7 +77,7 @@ public class Synapse implements Receiver{
 		R_A ra=new R_A(motor,1000,100);
 		ArrayList<Receptor> receptorList=new ArrayList<Receptor>();
 		receptorList.add(ra);
-		Synapse btw=new Synapse(1,sensory,motor,receptorList);
+		Synapse btw=new Synapse(100,sensory,motor,receptorList);
 		sensory.addReceiver(btw);
 		Muscle muscle=new Muscle();
 		motor.addReceiver(muscle);
@@ -90,11 +90,14 @@ public class Synapse implements Receiver{
 		{
 			for(int i=0;i<10;i++)
 			{
-			Thread.sleep(3000); 
+			//Thread.sleep((long) (10*Math.random()* 1000)); 
+				Thread.sleep(3000);
 			System.out.println("IN A FIRE "+ (++count));
 			A.touch(1);
 			}
-			Thread.sleep(20000);
+
+			Thread.sleep(10000);
+			
 
 		}
 	}

@@ -5,7 +5,7 @@ public class Muscle implements Receiver{
 	@Override
 	public void receive() {
 		// TODO Auto-generated method stub
-		System.out.println("muscle = "+ timeKeep.effect());
+		//System.out.println("muscle = "+ timeKeep.effect());
 	}
 
 	public static void main(String[] args) throws InterruptedException

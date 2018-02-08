@@ -1,12 +1,4 @@
-/NT_A.class
-/Neuron.class
+/ClockToBase.class
 /Synapse.class
-/Touch.class
-/IonotropicReceptor.class
-/R_A.class
-/Receptor.class
 /Muscle.class
-/Calculate.class
-/Clock.class
-/Neurotransmitter.class
-/Receiver.class
+/Neuron.class

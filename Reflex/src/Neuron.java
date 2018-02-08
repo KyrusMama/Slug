@@ -21,7 +21,7 @@ public class Neuron {
 	
 	/**
 	 * name="Neuron"
-	 * contains the function NT amt = a * e^(-x/c) in Clock
+	 * contains the function NT amt = a * e^(-x/b) in Clock
 
 	 * @param NT neurotransmitter this neuron uses
 	 * @param a variable to be used to calculate NT amt
@@ -39,7 +39,7 @@ public class Neuron {
 	}
 	
 	/**
-	 * contains the function NT amt = a * e^(-x/c) in Clock
+	 * contains the function NT amt = a * e^(-x/b) in Clock
 
 	 * @param NT neurotransmitter this neuron uses
 	 * @param a variable to be used to calculate NT amt
@@ -57,7 +57,7 @@ public class Neuron {
 	}
 	
 	/**
-	 * contains the function NT amt = a * e^(-x/c) in Clock
+	 * contains the function NT amt = a * e^(-x/b) in Clock
 	 *
 	 * a=50
 	 * c=10000
